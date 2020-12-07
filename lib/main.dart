@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:newsapp/ui/screens/home_screen.dart';
+import 'package:newsapp/ui/screens/loginScreen.dart';
+import 'package:provider/provider.dart';
+
+import 'viewmodels/signUpViewModel.dart';
+import 'viewmodels/validateLogin.dart';
 
 void main() {
   runApp(MyApp());
@@ -8,13 +12,21 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'News App',
-      theme: ThemeData(
-        primaryColor: Colors.white,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => ValidateLoginModel(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => SignUpViewModel(),
+        )
+      ],
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(),
+        home: LoginScreen(),
+        debugShowCheckedModeBanner: false,
       ),
-      home: HomeScreen(),
     );
   }
 }

@@ -6,8 +6,8 @@ import 'package:newsapp/logic/services/news.dart';
 import 'package:newsapp/ui/screens/article_screen.dart';
 import 'package:newsapp/ui/widgets/app_bar.dart';
 import 'package:newsapp/ui/widgets/category_tile.dart';
+import 'package:newsapp/ui/widgets/navigationDrawer.dart';
 import 'package:newsapp/ui/widgets/news_tile.dart';
-
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -41,6 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: NavigationDrawer(),
       appBar: normalAppBar(),
       body: _isLoading
           ? Center(
