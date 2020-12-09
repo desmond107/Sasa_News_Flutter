@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:newsapp/ui/screens/blog_screen.dart';
 import 'package:newsapp/ui/screens/loginScreen.dart';
 
 class NavigationDrawer extends StatefulWidget {
@@ -64,7 +65,10 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
                       leading: Icon(Icons.shop),
                       title: Text('Blogs',
                           style: TextStyle(fontWeight: FontWeight.bold)),
-                      onTap: () {}),
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => BlogScreen()));
+                      }),
                   ListTile(
                       leading: Icon(Icons.share),
                       title: Text(

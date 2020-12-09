@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:newsapp/ui/screens/loginScreen.dart';
+import 'package:newsapp/viewmodels/blogViewModel.dart';
 import 'package:provider/provider.dart';
 
 import 'viewmodels/signUpViewModel.dart';
@@ -19,6 +20,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (context) => SignUpViewModel(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => BlogViewModel(),
         )
       ],
       child: MaterialApp(
